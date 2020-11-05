@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title Joemazon
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous")
+    link(rel="stylesheet" href="/stylesheets/style.css")
+    link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet")
+    script(src="/javascripts/script.js")
+  body#joemazon-login
+    a(href="http://localhost:3000")
+      h1#joemazon-login-title Joemazon
+
+    div#joemazon-login-main-content.container
+      div.jumbotron
+        h2 Login
+        form(action="login" method="POST")
+          div.form-group
+            label Username
+            input.form-control(placeholder="Enter Username" name="username") 
+          div.form-group
+            label Password
+            input.form-control(type="password" placeholder="Enter Password" name="password")   
+          div.form-check
+            input.form-check-input(type="checkbox")
+            label.form-check-label Remember my details
+          button.btn.btn-primary(type="submit") Submit
+        //- div.joemazon-login-spacing
+        //-     input(type="text" placeholder="Enter Email Address") 
+        //- div.joemazon-login-spacing
+        //-     input.clearfix(type="text" placeholder="Enter Password")
+        //- div 
+        //-     button#joemazon-button.btn.btn-dark(type="submit") Submit
+        //- div#joemazon-login-error
+    
