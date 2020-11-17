@@ -13,9 +13,15 @@ html(lang="en")
       h1#joemazon-login-title Joemazon
 
     div#joemazon-login-main-content.container
-      div.jumbotron
+      div#joemazon-jumbotron.jumbotron
         h2 Sign Up
         form(action="sign-up" method="POST")
+          div.form-group
+            label First Name
+            input.form-control(placeholder="Enter First Name" name="firstName")
+          div.form-group
+            label Last Name
+            input.form-control(placeholder="Enter Last Name" name="lastName")
           div.form-group
             label Username
             input.form-control(placeholder="Enter Username" name="username")

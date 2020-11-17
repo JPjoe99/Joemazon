@@ -12,7 +12,7 @@ html(lang="en")
   body
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       a.navbar-brand(href="/") Joemazon
-      form.form-inline.my-2.my-lg-0.ml-auto.mr-auto.d-block.d-sm-block.d-md-none(action="search" method="GET")
+      form.form-inline.my-2.my-lg-0.ml-auto.mr-auto.d-block.d-sm-block.d-md-none
           input.form-control.mr-sm-2(type="text" placeholder="Search Joemazon")
           button.btn.btn-primary.my-2.my-sm-0(type="submit") 
             span(class="fas fa-search")
@@ -26,16 +26,30 @@ html(lang="en")
             a.nav-link(href=`users/${logStatus}`) #{logStatus}
           li.nav-item
             a.nav-link(href="users/sign-up") #{signupStatus}
-        form.form-inline.my-2.my-lg-0.d-none.d-md-block.ml-auto(action="search" method="GET")
+        form.form-inline.my-2.my-lg-0.d-none.d-md-block.ml-auto
           input.form-control.mr-sm-2(type="text" placeholder="Search Joemazon")
           button.btn.btn-primary.my-2.my-sm-0(type="submit") 
             span(class="fas fa-search")
     main#joemazon-container.container(role="main" style="padding: 60px;")
-    #joemazon-container
-      if (logStatus == "Login") 
-        include snippets/about.pug
-      else 
-        include snippets/home.pug
+      div.jumbotron
+        div.container 
+          div.row
+          - for (var i = 0; i < images.length; i++) {
+              div#joemazon-grid-square.row
+                div.col-md-4.col-sm-12.ml-auto.mr-auto
+                  img.joemazon-picture-size(src=`${images[i]}`)
+                div.joemazon-product-data.col-md-8.col-sm-12.ml-auto.mr-auto
+                  h2 #{titles[i]}
+                  p by Joe Price | 19/10/2015
+                  p £15
+                  button Add to basket
+              hr.joemazon-line
+          - }
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")  
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous")
+
+
+
+
+    

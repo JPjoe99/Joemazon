@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var authenticate = require("../authenticate")
 var config = require("../config");
 var jwt = require("jsonwebtoken");
+var User = require("../models/users");
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -17,7 +18,14 @@ router.get('/', (req, res, next) => {
         return console.log(error);
       }
       else if (user) {
-        res.render("index", {logStatus: "Logout"});
+        User.findById({_id: user._id})
+        .then(user => {
+          console.log(user);
+          res.render("index", {logStatus: "Logout", user: user.firstName});
+        })
+        .catch(error => {
+          next(error);
+        })
       }
     });
   }
