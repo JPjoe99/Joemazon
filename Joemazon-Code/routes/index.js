@@ -10,7 +10,7 @@ var User = require("../models/users");
 router.get('/', (req, res, next) => {
   var token = req.cookies["id"];
   if (token == null) {
-    return res.render("index", {logStatus: "Login", signupStatus: "Sign Up"});
+    return res.render("index", {logStatus: "Login", signupStatus: "Sign Up", accountStatus: false});
   }
   else {
     jwt.verify(token, config.secretKey, (error, user) => {
@@ -19,9 +19,10 @@ router.get('/', (req, res, next) => {
       }
       else if (user) {
         User.findById({_id: user._id})
+        .populate("favourites")
         .then(user => {
           console.log(user);
-          res.render("index", {logStatus: "Logout", user: user.firstName});
+          res.render("index", {logStatus: "Logout", account: "My Account", accountStatus: false, user: user});
         })
         .catch(error => {
           next(error);

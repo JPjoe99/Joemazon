@@ -13,19 +13,19 @@ html(lang="en")
       h1#joemazon-login-title Joemazon
 
     div#joemazon-login-main-content.container
-      div.jumbotron
-        h2 Login
-        form(action="login" method="POST")
-          div.form-group
-            label Username
-            input.form-control(placeholder="Enter Username" name="username") 
-          div.form-group
-            label Password
-            input.form-control(type="password" placeholder="Enter Password" name="password")   
-          div.form-check
-            input.form-check-input(type="checkbox")
-            label.form-check-label Remember my details
-          button.btn.btn-primary(type="submit") Submit
+      h2 Login
+      form.form-signin(action="login" method="POST")
+        label.sr-only(for="inputUsername") Username
+        input#inputUsername.form-control(placeholder="Username" name="username")   
+        label.sr-only(for="inputPassword") Password
+        input#inputPassword.form-control(type="password" placeholder="Password" name="password")    
+        div.checkbox.mb-3
+          label
+            <input type="checkbox" value="remember-me"> Remember me
+        p Don't have an account? 
+        a(href="http://localhost:3000/user/sign-up") 
+          p Sign up here! 
+        button.btn.btn-lg.btn-primary.btn-block(type="submit") Login
         //- div.joemazon-login-spacing
         //-     input(type="text" placeholder="Enter Email Address") 
         //- div.joemazon-login-spacing

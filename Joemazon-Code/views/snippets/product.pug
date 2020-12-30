@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title Joemazon
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous")
+    link(rel="stylesheet" href="stylesheets/style.css")
+    link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet")
+    script(src="https://kit.fontawesome.com/666de9f641.js" crossorigin="anonymous")
+    script(src="javascripts/script.js")
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href="/") Joemazon
+      form.form-inline.my-2.my-lg-0.ml-auto.mr-auto.d-block.d-sm-block.d-md-none(action="search" method="GET")
+          input.form-control.mr-sm-2(type="text" name="q" placeholder="Search Joemazon")
+          button.btn.btn-primary.my-2.my-sm-0(type="submit") 
+            span(class="fas fa-search")
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#main-navbar")
+        span.navbar-toggler-icon
+      #main-navbar.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href="/user") #{account}
+          li.nav-item
+            a.nav-link(href=`user/${logStatus}`) #{logStatus}
+          li.nav-item
+            a.nav-link(href="user/sign-up") #{signupStatus}
+        form.form-inline.my-2.my-lg-0.d-none.d-md-block.ml-auto(action="search" method="GET")
+          input.form-control.mr-sm-2(type="text" name="q" placeholder="Search Joemazon")
+          button.btn.btn-primary.my-2.my-sm-0(type="submit") 
+            span(class="fas fa-search")
+    main#joemazon-container.container-fluid(role="main")
+      div.jumbotron#joemazon-product-jumbotron
+        div.container-fluid.joemazon-product-container
+          div.row
+            div.col-lg-12
+              div.container.fluid 
+                div.row 
+                  div.col-lg-4#joemazon-product-image-grid 
+                    img.joemazon-product-image-size(src=`${product.image}`)
+                  div#joemazon-product-info-grid.col-lg-5 
+                    h2 #{product.title}
+                    h4 By #{product.author}
+                    p.joemazon-description Description hasdashasdfjasdfjadsfjasdfhahsdfhgasdhfhasdjf
+                  div.col-lg-3.joemazon-product-purchase-grid
+                    h4 £#{product.price}
+                    h5 Free Delivery
+                    h5 In Stock
+                    form(action="user/favourites" method="POST")
+                      button.btn.btn-info Add to Wish List
+                    p Added to Wish List!
+                    form(action="user/basket" method="POST")
+                      button.btn.btn-dark Add To Basket
+                    p Added to Basket!
+        div.container-fluid
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")  
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous")

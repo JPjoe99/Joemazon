@@ -1,28 +1,37 @@
-
-(function() {
-document.addEventListener("DOMContentLoaded", function(event) { 
-  var checkAboutClicked = function() {
-    targetElement = document.getElementById("joemazon-about").onclick;
-    if (targetElement === true) {
-      console.log("Hello there");
-      return true;
+function signUpCheck () {
+    var nameFirst = document.getElementById("inputFirstName").value;
+    var nameLast = document.getElementById("inputLastName").value;
+    var nameUser = document.getElementById("inputUsername").value;
+    var addressEmail = document.getElementById("inputEmail").value;
+    var wordPass = document.getElementById("inputPassword").value;
+    if (nameFirst == "" || nameLast == "" || nameUser == "" || addressEmail == "" || wordPass == "") {
+        var popup = "<p>All details have not been entered</p>";
+        document.getElementById("detailsPopup").innerHTML = popup;
     }
     else {
-      return false;
+        console.log("We are here");
+        var url = "http://localhost:3000/user/sign-up";
+        var data = {
+            firstName: nameFirst,
+            lastName: nameLast,
+            username: nameUser,
+            emailAddress: addressEmail,
+            password: wordPass
+        };
+        console.log(data);
+        const optionalParam = {
+            body: JSON.stringify(data),
+            method: "POST"
+        };
+        fetch(url, optionalParam)
+        .then(data => {
+            return data.json();
+        })
+        .then(res => {
+            console.log(res);
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
-  }
-  
-  var insertError = function() {
-    var selectedElement = document.querySelector("#joemazon-login-error");
-    selectedElement.innerHTML = "<p id=joemazon-login-error>Login details incorrect</p>";
-  }
-  
-});
-})();
-
-
-
-
-
-  
-
+}

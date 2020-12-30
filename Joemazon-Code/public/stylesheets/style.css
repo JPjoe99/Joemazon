@@ -1,12 +1,16 @@
 * {
   font-family: 'Kanit', sans-serif;
-  
-}
+  box-sizing: border-box;
+} 
 
 body {
-  margin: 0;
-  padding: 0;
+   margin: 0;
+  padding: 0; 
   background-color: gray;
+}
+
+div {
+  display: block;
 }
 
 #joemazon-login {
@@ -21,7 +25,6 @@ body {
 #joemazon-login-main-content {
   text-align: center;
   margin-top: 25px;
-  /* border: 1px solid black; */
 }
 
 #joemazon-login-error {
@@ -41,19 +44,40 @@ body {
 
 #joemazon-grid-square {
   background-color: gray;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding: 10;
+  border-radius: 10px;
 }
 
-.joemazon-product-data {
+
+
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+  border-radius: 15px 50px 30px;
+}
+
+#joemazon-product-info-grid {
   background-color: white;
-  border-radius: 15px 50px 30px 5px;
 }
 
-.joemazon-picture-size {
+#joemazon-image-info-grid {
   width: 160px;
-  height: 200px;
+  height: 200px;  
 }
 
 #joemazon-row-square {
@@ -69,6 +93,10 @@ body {
   padding-bottom: 5px;
 }
 
+#joemazon-product-jumbotron {
+  background-color: white;
+}
+
 a {
   color: black;
 }
@@ -79,4 +107,106 @@ a:link {
 
 a:hover {
   color: gray;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#joemazon-account-grid {
+  width: 100%;
+}
+
+#joemazon-account-tile {
+  background-color: white;
+  padding: 5px;
+}
+
+.joemazon-product-container {
+  padding-top: 30px;
+}
+
+#joemazon-product-image-grid {
+  text-align: center
+}
+
+.vl {
+  border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.joemazon-filter {
+  background-color: gray;
+
+}
+
+#joemazon-tile {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.joemazon-jumbotron {
+  background-color: gray;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.joemazon-product-image-size {
+  height: 350px;
+  width: 250px;
+}
+
+.joemazon-product-page {
+  padding-top: 25px;
+}
+
+.joemazon-product-purchase-grid {
+  border: 1px solid rgba(0,0,0,.1);
+  background-color:  rgba(0,0,0,.1);
+  padding-top: 10px;
+}
+
+div > h4 {
+  color: solid black;
+}
+
+.joemazon-description {
+  background-color: rgba(0,0,0,.1);
+}
+
+.joemazon-section {
+  background-color: rgba(0,0,0,.1);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.joemazon-wish-list-grid {
+  text-align: center;
+  width: 150px;
+  height: 175px;
 }

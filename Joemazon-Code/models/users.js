@@ -13,7 +13,37 @@ const UserSchema = new mongoose.Schema({
     emailAddress: {
         required: true,
         type: String
-    }
+    },
+    address: {
+        numberOrName: {
+            default: "",
+            type: String
+        },
+        street: {
+            default: "",
+            type: String
+        },
+        county: {
+            default: "",
+            type: String
+        },
+        postCode: {
+            default: "",
+            type: String
+        }
+    },
+    favourites: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "product"
+        }
+    ],
+    basket: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "product"
+        }
+    ]
 },
 {
     timestamps: true

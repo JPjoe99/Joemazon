@@ -22,22 +22,21 @@ html(lang="en")
         #main-navbar.collapse.navbar-collapse
           ul.navbar-nav.mr-auto
             li.nav-item
-              a.nav-link(href=`user`) #{account}
+              a.nav-link(href=`users/account`) #{account}
             li.nav-item
-              a.nav-link(href=`user/${logStatus}`) #{logStatus}
+              a.nav-link(href=`users/${logStatus}`) #{logStatus}
             li.nav-item
-              a.nav-link(href="user/sign-up") #{signupStatus}
+              a.nav-link(href="users/sign-up") #{signupStatus}
           form.form-inline.my-2.my-lg-0.d-none.d-md-block.ml-auto(action="search" method="GET")
             input.form-control.mr-sm-2(type="text" placeholder="Search Joemazon" name="q")
             button.btn.btn-primary.my-2.my-sm-0(type="submit") 
               span(class="fas fa-search")
     main#joemazon-container.container-fluid(role="main")
-      if (logStatus == "Login") 
-        include snippets/carousel.pug
-      else if (logStatus == "Logout" && accountStatus == false) 
-        include snippets/home.pug
-      else if (logStatus == "Logout" && accountStatus == true)
-        include snippets/user.pug
+      div.jumbotron 
+        h1 Your Order History
+          div.container-fluid
+            p Here is your order history!
+      
       
 
     script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
