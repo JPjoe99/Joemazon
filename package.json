@@ -4,8 +4,11 @@
   "description": "Joemazon",
   "main": "joemazon-code/bin/www",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "jsonwebtoken": "^8.5.1",
+    "mkcert": "^1.4.0",
     "mongodb": "^3.6.3",
     "mongoose-currency": "^0.2.0",
     "morgan": "^1.10.0",
@@ -17,7 +20,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon joemazon-code/bin/www"
+    "start": "nodemon bin/www"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,20 @@
+div.jumbotron#joemazon-product-jumbotron
+  div.container
+    h1 Hi #{user.firstName}! 
+  div.container 
+    div.row 
+      div.col-lg-4
+        a(href="http://localhost:3000/user/favourites") 
+          h3 Your Wish List
+        div.container.joemazon-section
+          div.row   
+            div.col-lg-6
+              img.joemazon-wish-list-grid(src=`${user.favourites[0].image}`)
+            div.col-lg-6 
+              img.joemazon-wish-list-grid(src=`${user.favourites[1].image}`)
+      div.col-lg-4 
+        h3 Order History
+        section.joemazon-section
+          p hello there
+      div.col-lg-4 
+        h3 Your Orders

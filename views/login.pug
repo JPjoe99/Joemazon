@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title Joemazon
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous")
+    link(rel="stylesheet" href="/stylesheets/style.css")
+    link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet")
+  body#joemazon-login
+    a(href="http://localhost:3000")
+      h1#joemazon-login-title Joemazon
+    div#joemazon-login-main-content.container
+      h2 Login
+      form#login-form.form-signin(action="login" method="POST" onSubmit="return checkSubmit()")
+        label.sr-only(for="inputUsername") Username
+        input#input.form-control(placeholder="Username" name="username")   
+        label.sr-only(for="inputPassword") Password
+        input#input.form-control(type="password" placeholder="Password" name="password")    
+        div.checkbox.mb-3
+          label
+            <input type="checkbox" value="remember-me"> Remember me
+        span 
+          p Don't have an account? 
+            a(href="sign-up") Sign up here! 
+        button#submit.btn.btn-lg.btn-primary.btn-block(type="submit") Login
+    script(src="/javascripts/login.js")
+    

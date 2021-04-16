@@ -1,0 +1,82 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title Joemazon
+    //- link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous")
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    link(rel="stylesheet" href="/stylesheets/style.css")
+    link(href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet")
+    script(src="https://kit.fontawesome.com/666de9f641.js" crossorigin="anonymous")
+
+  body
+    header#header
+      //- nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+      //-   a.navbar-brand(href="/") Joemazon
+      //-   form.form-inline.my-2.my-lg-0.ml-auto.mr-auto.d-block.d-sm-block.d-md-none(action="search" method="GET")
+      //-       input.form-control.mr-sm-2(type="text" name="q" placeholder="Search Joemazon")
+      //-       button.btn.btn-primary.my-2.my-sm-0(type="submit") 
+      //-         span(class="fas fa-search")
+      //-   button.navbar-toggler(type="button" data-toggle="collapse" data-target="#main-navbar")
+      //-     span.navbar-toggler-icon
+      //-   #main-navbar.collapse.navbar-collapse
+      //-     ul.navbar-nav.mr-auto
+      //-       li.nav-item
+      //-         a#login.nav-link(href=`user`) #{account}
+      //-       li.nav-item
+      //-         a.nav-link(href=`users/${logStatus}`) #{logStatus}
+      //-       li.nav-item
+      //-         a.nav-link(href="users/sign-up") #{signupStatus}
+      //-     form.form-inline.my-2.my-lg-0.d-none.d-md-block.ml-auto(action="search" method="GET")
+      //-       input.form-control.mr-sm-2(type="text" placeholder="Search Joemazon" name="q")
+      //-       button.btn.btn-primary.my-2.my-sm-0(type="submit") 
+      //-         span(class="fas fa-search")
+    main#joemazon-container.container-fluid(role="main")
+      //- if (logStatus == "Login") 
+      //-   include snippets/carousel.pug
+      //- else if (logStatus == "Logout" && accountStatus == false) 
+      //-   include snippets/home.pug
+      //- else if (logStatus == "Logout" && accountStatus == true)
+      //-   include snippets/user.pug
+      
+    
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous")
+    script(src="/javascripts/script.js")
+//- <!DOCTYPE html>
+//- <html lang="en">
+
+//-     <head>
+//-         <meta charset="utf-8">
+//-         <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+//-         <title>Joemazon</title>
+//-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+//-         <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+//-         <!-- <script src="https://kit.fontawesome.com/666de9f641.js" crossorigin="anonymous"></script> -->
+//-     </head>
+
+//-     <body>
+//-         <header>
+//-             <nav class="navbar navbar-expand-md navbar-dark bg-dark"><a class="navbar-brand" href="/">Joemazon</a>
+//-                 <form class="form-inline my-2 my-lg-0 ml-auto mr-auto d-block d-sm-block d-md-none" action="search" method="GET"><input class="form-control mr-sm-2" type="text" name="q" placeholder="Search Joemazon"><button class="btn btn-primary my-2 my-sm-0" type="submit"> <span class="fas fa-search"></span></button></form><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"><span class="navbar-toggler-icon"></span></button>
+//-                 <div class="collapse navbar-collapse" id="main-navbar">
+//-                     <ul class="navbar-nav mr-auto">
+//-                         <li class="nav-item"><a class="nav-link"></a></li>
+//-                         <li class="nav-item"><a class="nav-link"></a></li>
+//-                         <li class="nav-item"><a class="nav-link"></a></li>
+//-                     </ul>
+//-                     <!-- <form class="form-inline my-2 my-lg-0 d-none d-md-block ml-auto" action="search" method="GET"><input class="form-control mr-sm-2" type="text" placeholder="Search Joemazon" name="q"><button class="btn btn-primary my-2 my-sm-0" type="submit"> <span class="fas fa-search"></span></button></form> -->
+//-                 </div>
+//-             </nav>
+//-         </header>
+//-         <p>Hello World!</p>
+//-         <!-- <main class="container-fluid" id="joemazon-container" role="main"></main> -->
+//-         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+//-         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+//-         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+//-     </body>
+
+//- </html>
